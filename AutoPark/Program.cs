@@ -22,12 +22,13 @@ namespace AutoPark
                 return;
             }
 
-            //foreach (Project item in projects)
-            //{
-            //    item.PrintInfo();
-            //}
-
+            foreach (Project item in projects)
+            {
+                item.PrintInfo();
+            }
+            Console.WriteLine("\n");
             Console.WriteLine("--------------------------------------------------------");
+            Console.WriteLine("\n");
             Console.WriteLine("Выберите проэкт ");
             foreach (var item in projects)
             {
@@ -48,6 +49,43 @@ namespace AutoPark
             }
             while (temp == null);
 
+            Console.WriteLine("Выберите критерий поиска: 1 по номеру, 2 по модели");
+            int choice;
+            do
+            {
+                Console.Write("-> ");
+                Int32.TryParse(Console.ReadLine(), out choice);
+
+            } while (choice != 1 && choice != 2);
+
+            int GosNom = 0;
+            string Model = " ";
+            Service serv = new Service();
+            Car findCar = null;
+
+            switch (choice)
+            {
+                case 1:
+                    {
+                        Console.WriteLine("Введите номер машины -> ");
+                        Int32.TryParse(Console.ReadLine(), out GosNom);
+                        findCar = serv.Search(temp, GosNom);
+                    }
+                    break;
+                case 2:
+                    {
+                        Console.WriteLine("Введите модель машины -> ");
+                        serv.Search(temp, Console.ReadLine());
+                    }
+                    break;
+
+                    if (findCar == null)
+                    {
+                        Console.WriteLine("Модель не найдена");
+                    }
+                    else
+                        findCar.PrintInfo();
+            }
         }
     }
 
