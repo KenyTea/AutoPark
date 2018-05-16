@@ -69,23 +69,23 @@ namespace AutoPark
                     {
                         Console.WriteLine("Введите номер машины -> ");
                         Int32.TryParse(Console.ReadLine(), out GosNom);
-                        findCar = serv.Search(temp, GosNom);
+                        findCar = findCar = serv.Search(temp, GosNom);
                     }
                     break;
                 case 2:
                     {
                         Console.WriteLine("Введите модель машины -> ");
-                        serv.Search(temp, Console.ReadLine());
+                        findCar = serv.Search(temp, Console.ReadLine());
                     }
                     break;
-
-                    if (findCar == null)
-                    {
-                        Console.WriteLine("Модель не найдена");
-                    }
-                    else
-                        findCar.PrintInfo();
             }
+
+            if (findCar == null)
+            {
+                Console.WriteLine("Модель не найдена");
+            }
+            else
+                findCar.PrintInfo();
         }
     }
 
