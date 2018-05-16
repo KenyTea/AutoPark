@@ -13,7 +13,7 @@ namespace AutoPark
         static void Main(string[] args)
         {
             Generator gen = new Generator();
-           List<Project> projects = null; 
+            List<Project> projects = null;
 
             string massage;
             if (!gen.GeneratorProgect(ref projects, out massage))
@@ -22,11 +22,33 @@ namespace AutoPark
                 return;
             }
 
-            foreach (Project item in projects)
+            //foreach (Project item in projects)
+            //{
+            //    item.PrintInfo();
+            //}
+
+            Console.WriteLine("--------------------------------------------------------");
+            Console.WriteLine("Выберите проэкт ");
+            foreach (var item in projects)
             {
-                item.PrintInfo();
+                Console.WriteLine(" - " + item.NameProgect);
             }
+
+            Project temp = null;
+
+            do
+            {
+                Console.WriteLine("-> ");
+                string name = Console.ReadLine();
+
+                temp = projects.FirstOrDefault(o => o.NameProgect == name);
+                if (temp != null)
+                    break;
+                Console.WriteLine("Проэкт не найден");
+            }
+            while (temp == null);
+
         }
-}
+    }
 
 }
