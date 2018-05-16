@@ -42,7 +42,7 @@ namespace AutoPark
                 Console.WriteLine("-> ");
                 string name = Console.ReadLine();
 
-                temp = projects.FirstOrDefault(o => o.NameProgect == name);
+                temp = projects.FirstOrDefault(o => o.NameProgect.ToLower() == name.ToLower());
                 if (temp != null)
                     break;
                 Console.WriteLine("Проэкт не найден");
