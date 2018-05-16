@@ -44,6 +44,7 @@
     <Compile Include="Modules\Car.cs" />
     <Compile Include="Modules\Component.cs" />
     <Compile Include="Modules\Project.cs" />
+    <Compile Include="Modules\Service.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

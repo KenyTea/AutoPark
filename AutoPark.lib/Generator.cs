@@ -64,7 +64,9 @@ namespace AutoPark.lib
                 components.Add(comp);
             }
             massege = "Создан компонент";
-            return null;
+            return components;
         }
+
+
     }
 }

@@ -11,5 +11,15 @@ namespace AutoPark.lib.Modules
         public string NameProgect { get; set; }
 
         public List<Car> Cars = new List<Car>();
+
+        public void PrintInfo()
+        {
+            Console.WriteLine("Project : " + NameProgect);
+            foreach (Car item in Cars)
+            {
+                Console.WriteLine("---------------");
+                item.PrintInfo();
+            }
+        }
     }
 }
