@@ -20,11 +20,25 @@ namespace AutoPark.lib.Modules
         {
             Console.WriteLine("\n");
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("-> {0} \t {1} g.v.", Model, GodVipuska.Year);
+            Console.WriteLine("-> {0} \t {1} g.v. \t Number - {2}", Model, GodVipuska.Year, GosNomer);
             Console.ForegroundColor = ConsoleColor.White;
             
             foreach (Component item in Components)
             {             
+                Console.WriteLine("-->" + item.NameComponent);
+            }
+        }
+
+
+        public void PrintInfoGreen()
+        {
+            Console.WriteLine("\n");
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.WriteLine("-> {0} \t {1} g.v. \t Number - {2}", Model, GodVipuska.Year, GosNomer);
+            Console.ForegroundColor = ConsoleColor.White;
+
+            foreach (Component item in Components)
+            {
                 Console.WriteLine("-->" + item.NameComponent);
             }
         }

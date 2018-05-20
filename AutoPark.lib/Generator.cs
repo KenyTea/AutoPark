@@ -48,7 +48,7 @@ namespace AutoPark.lib
                 Cars.Add(car);
             }
 
-            massage = "";
+            massage = "Создана машина";
             return Cars;
         }
 

@@ -85,7 +85,9 @@ namespace AutoPark
                 Console.WriteLine("Модель не найдена");
             }
             else
-                findCar.PrintInfo();
+                Console.Clear();
+                Console.ForegroundColor = ConsoleColor.Green;
+                findCar.PrintInfoGreen();
         }
     }
 
